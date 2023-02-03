@@ -11,6 +11,7 @@ import { PDFProvider } from "./state";
 pdfjs.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 
 const PDFRenderer: DocRenderer = ({ mainState }) => {
+  console.log('mainState', mainState)
   return (
     <PDFProvider mainState={mainState}>
       <Container id="pdf-renderer" data-testid="pdf-renderer">
