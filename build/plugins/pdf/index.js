@@ -35,22 +35,17 @@ var pdfjsWorker = __importStar(require("pdfjs-dist/build/pdf.worker.entry"));
 var react_1 = __importDefault(require("react"));
 var react_pdf_1 = require("react-pdf");
 var styled_components_1 = __importDefault(require("styled-components"));
+var PDFPages_1 = __importDefault(require("./components/pages/PDFPages"));
+var PDFControls_1 = __importDefault(require("./components/PDFControls"));
+var state_1 = require("./state");
 react_pdf_1.pdfjs.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 var PDFRenderer = function (_a) {
-    var _b;
     var mainState = _a.mainState;
     console.log('mainState', mainState);
-    return (react_1.default.createElement("div", null,
-        "Testing new: ", (_b = Object === null || Object === void 0 ? void 0 : Object.keys(mainState)) === null || _b === void 0 ? void 0 :
-        _b.toString()));
-    // return (
-    //   <PDFProvider mainState={mainState}>
-    //     <Container id="pdf-renderer" data-testid="pdf-renderer">
-    //       <PDFControls />
-    //       <PDFPages />
-    //     </Container>
-    //   </PDFProvider>
-    // );
+    return (react_1.default.createElement(state_1.PDFProvider, { mainState: mainState },
+        react_1.default.createElement(Container, { id: "pdf-renderer", "data-testid": "pdf-renderer" },
+            react_1.default.createElement(PDFControls_1.default, null),
+            react_1.default.createElement(PDFPages_1.default, null))));
 };
 exports.default = PDFRenderer;
 PDFRenderer.fileTypes = ["pdf", "application/pdf"];
