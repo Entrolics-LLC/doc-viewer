@@ -13,18 +13,13 @@ pdfjs.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 const PDFRenderer: DocRenderer = ({ mainState }) => {
   console.log('mainState', mainState)
   return (
-    <div>
-      <p>Page</p>
-    </div>
-  )
-  // return (
-  //   <PDFProvider mainState={mainState}>
-  //     <Container id="pdf-renderer" data-testid="pdf-renderer">
-  //       <PDFControls />
-  //       <PDFPages />
-  //     </Container>
-  //   </PDFProvider>
-  // );
+    <PDFProvider mainState={mainState}>
+      <Container id="pdf-renderer" data-testid="pdf-renderer">
+        <PDFControls />
+        <PDFPages />
+      </Container>
+    </PDFProvider>
+  );
 };
 
 export default PDFRenderer;

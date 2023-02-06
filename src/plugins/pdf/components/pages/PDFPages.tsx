@@ -22,13 +22,16 @@ const PDFPages: FC<{}> = () => {
   if (!currentDocument || currentDocument.fileData === undefined) return null;
 
   return (
-    <DocumentPDF
+    <div>
+      <p>Hello</p>
+      <DocumentPDF
       file={currentDocument.fileData}
       onLoadSuccess={({ numPages }) => dispatch(setNumPages(numPages))}
       loading={<span>Loading...</span>}
     >
       {paginated ? <PDFSinglePage /> : <PDFAllPages />}
     </DocumentPDF>
+    </div>
   );
 };
 
