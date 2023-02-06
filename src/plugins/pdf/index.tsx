@@ -13,13 +13,16 @@ pdfjs.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 const PDFRenderer: DocRenderer = ({ mainState }) => {
   console.log('mainState', mainState)
   return (
-    <PDFProvider mainState={mainState}>
-      <Container id="pdf-renderer" data-testid="pdf-renderer">
-        <PDFControls />
-        <PDFPages />
-      </Container>
-    </PDFProvider>
-  );
+    <div>Hello</div>
+  )
+  // return (
+  //   <PDFProvider mainState={mainState}>
+  //     <Container id="pdf-renderer" data-testid="pdf-renderer">
+  //       <PDFControls />
+  //       <PDFPages />
+  //     </Container>
+  //   </PDFProvider>
+  // );
 };
 
 export default PDFRenderer;
@@ -36,8 +39,8 @@ const Container = styled.div`
   /* width */
   &::-webkit-scrollbar {
     ${(props: IStyledProps) => {
-      return props.theme.disableThemeScrollbar ? "" : "width: 10px";
-    }};
+    return props.theme.disableThemeScrollbar ? "" : "width: 10px";
+  }};
   }
   /* Track */
   &::-webkit-scrollbar-track {
