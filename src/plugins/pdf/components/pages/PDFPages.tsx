@@ -23,16 +23,19 @@ const PDFPages: FC<{}> = () => {
 
   return (
     <div>
-      <p>Hello</p>
-      <DocumentPDF
-      file={currentDocument.fileData}
-      onLoadSuccess={({ numPages }) => dispatch(setNumPages(numPages))}
-      loading={<span>Loading...</span>}
-    >
-      {paginated ? <PDFSinglePage /> : <PDFAllPages />}
-    </DocumentPDF>
+      Hello
     </div>
-  );
+  )
+
+  // return (
+  //   <DocumentPDF
+  //     file={currentDocument.fileData}
+  //     onLoadSuccess={({ numPages }) => dispatch(setNumPages(numPages))}
+  //     loading={<span>Loading...</span>}
+  //   >
+  //     {paginated ? <PDFSinglePage /> : <PDFAllPages />}
+  //   </DocumentPDF>
+  // );
 };
 
 const DocumentPDF = styled(Document)`
