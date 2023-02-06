@@ -28,6 +28,7 @@ export interface IDocument {
     uri: string;
     fileType?: string;
     fileData?: string | ArrayBuffer;
+    pageNumber?: number;
 }
 export interface DocRendererProps {
     mainState: IMainState;

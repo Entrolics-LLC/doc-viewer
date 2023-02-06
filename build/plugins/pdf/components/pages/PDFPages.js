@@ -43,7 +43,7 @@ var PDFPages = function () {
     var currentDocument = (mainState === null || mainState === void 0 ? void 0 : mainState.currentDocument) || null;
     (0, react_1.useEffect)(function () {
         dispatch((0, actions_1.setNumPages)(reducer_1.initialPDFState.numPages));
-        dispatch((0, actions_1.setCurrentPage)(2));
+        dispatch((0, actions_1.setCurrentPage)((currentDocument === null || currentDocument === void 0 ? void 0 : currentDocument.pageNumber) || 1));
     }, [currentDocument]);
     if (!currentDocument || currentDocument.fileData === undefined)
         return null;

@@ -17,7 +17,7 @@ const PDFPages: FC<{}> = () => {
 
   useEffect(() => {
     dispatch(setNumPages(initialPDFState.numPages));
-    dispatch(setCurrentPage(2))
+    dispatch(setCurrentPage(currentDocument?.pageNumber || 1))
   }, [currentDocument]);
 
   if (!currentDocument || currentDocument.fileData === undefined) return null;
