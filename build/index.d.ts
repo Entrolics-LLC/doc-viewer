@@ -17,7 +17,6 @@ export interface DocViewerProps {
     config?: IConfig;
     theme?: ITheme;
     pluginRenderers?: DocRenderer[];
-    pageNumber?: Number;
 }
 declare const DocViewer: FC<DocViewerProps>;
 export default DocViewer;

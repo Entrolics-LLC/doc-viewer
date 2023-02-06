@@ -36,5 +36,4 @@ export interface DocRenderer extends FC<DocRendererProps> {
     fileTypes: string[];
     weight: number;
     fileLoader?: FileLoaderFunction | null | undefined;
-    pageNumber?: number;
 }

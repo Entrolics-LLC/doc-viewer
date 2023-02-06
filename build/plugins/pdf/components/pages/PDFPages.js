@@ -43,13 +43,14 @@ var PDFPages = function () {
     var currentDocument = (mainState === null || mainState === void 0 ? void 0 : mainState.currentDocument) || null;
     (0, react_1.useEffect)(function () {
         dispatch((0, actions_1.setNumPages)(reducer_1.initialPDFState.numPages));
+        dispatch((0, actions_1.setCurrentPage)(2));
     }, [currentDocument]);
     if (!currentDocument || currentDocument.fileData === undefined)
         return null;
     return (react_1.default.createElement(DocumentPDF, { file: currentDocument.fileData, onLoadSuccess: function (_a) {
             var numPages = _a.numPages;
             return dispatch((0, actions_1.setNumPages)(numPages));
-        }, loading: react_1.default.createElement("span", null, "Loading...") }, paginated ? react_1.default.createElement(PDFSinglePage_1.default, { pageNum: 2 }) : react_1.default.createElement(PDFAllPages_1.PDFAllPages, null)));
+        }, loading: react_1.default.createElement("span", null, "Loading...") }, paginated ? react_1.default.createElement(PDFSinglePage_1.default, null) : react_1.default.createElement(PDFAllPages_1.PDFAllPages, null)));
 };
 var DocumentPDF = (0, styled_components_1.default)(react_pdf_1.Document)(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  margin: 0 auto;\n"], ["\n  display: flex;\n  flex-direction: column;\n  margin: 0 auto;\n"])));
 exports.default = PDFPages;

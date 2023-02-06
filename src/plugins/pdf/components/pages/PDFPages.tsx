@@ -2,7 +2,7 @@ import React, { FC, useContext, useEffect } from "react";
 import { Document } from "react-pdf";
 import styled from "styled-components";
 import { PDFContext } from "../../state";
-import { setNumPages } from "../../state/actions";
+import { setNumPages, setCurrentPage } from "../../state/actions";
 import { initialPDFState } from "../../state/reducer";
 import { PDFAllPages } from "./PDFAllPages";
 import PDFSinglePage from "./PDFSinglePage";
@@ -17,6 +17,7 @@ const PDFPages: FC<{}> = () => {
 
   useEffect(() => {
     dispatch(setNumPages(initialPDFState.numPages));
+    dispatch(setCurrentPage(2))
   }, [currentDocument]);
 
   if (!currentDocument || currentDocument.fileData === undefined) return null;
@@ -27,7 +28,7 @@ const PDFPages: FC<{}> = () => {
       onLoadSuccess={({ numPages }) => dispatch(setNumPages(numPages))}
       loading={<span>Loading...</span>}
     >
-      {paginated ? <PDFSinglePage pageNum={2} /> : <PDFAllPages />}
+      {paginated ? <PDFSinglePage /> : <PDFAllPages />}
     </DocumentPDF>
   );
 };

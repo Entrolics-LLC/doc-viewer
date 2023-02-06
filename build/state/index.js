@@ -41,7 +41,7 @@ var reducer_1 = require("./reducer");
 var DocViewerContext = (0, react_1.createContext)({ state: reducer_1.initialState, dispatch: function () { return null; } });
 exports.DocViewerContext = DocViewerContext;
 var AppProvider = function (props) {
-    var children = props.children, documents = props.documents, config = props.config, pluginRenderers = props.pluginRenderers, pageNumber = props.pageNumber;
+    var children = props.children, documents = props.documents, config = props.config, pluginRenderers = props.pluginRenderers;
     var _a = (0, react_1.useReducer)(reducer_1.mainStateReducer, __assign(__assign({}, reducer_1.initialState), { documents: documents || [], currentDocument: documents && documents.length ? documents[0] : undefined, config: config, pluginRenderers: pluginRenderers })), state = _a[0], dispatch = _a[1];
     // On inital load, and whenever they change,
     // replace documents with the new props passed in
