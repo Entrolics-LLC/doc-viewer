@@ -41,7 +41,7 @@ var PDFRenderer = function (_a) {
     var mainState = _a.mainState;
     console.log('mainState', mainState);
     return (react_1.default.createElement("div", null,
-        "Testing: ", (_b = Object === null || Object === void 0 ? void 0 : Object.keys(mainState)) === null || _b === void 0 ? void 0 :
+        "Testing new: ", (_b = Object === null || Object === void 0 ? void 0 : Object.keys(mainState)) === null || _b === void 0 ? void 0 :
         _b.toString()));
     // return (
     //   <PDFProvider mainState={mainState}>

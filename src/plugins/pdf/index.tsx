@@ -13,7 +13,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 const PDFRenderer: DocRenderer = ({ mainState }) => {
   console.log('mainState', mainState)
   return(
-    <div>Testing: {Object?.keys(mainState)?.toString()}</div>
+    <div>Testing new: {Object?.keys(mainState)?.toString()}</div>
   )
   // return (
   //   <PDFProvider mainState={mainState}>
