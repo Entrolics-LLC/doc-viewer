@@ -29,6 +29,8 @@ export interface DocViewerProps {
 const DocViewer: FC<DocViewerProps> = (props) => {
   const { documents, theme } = props;
 
+  console.log('props', props)
+
   if (!documents || documents === undefined) {
     throw new Error(
       "Please provide an array of documents to DocViewer.\ne.g. <DocViewer documents={[ { uri: 'https://mypdf.pdf' } ]} />"
