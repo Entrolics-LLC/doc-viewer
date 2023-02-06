@@ -72,7 +72,7 @@ exports.TXTRenderer = txt_1.default;
 var state_1 = require("./state");
 var theme_1 = require("./theme");
 var DocViewer = function (props) {
-    var documents = props.documents, theme = props.theme;
+    var documents = props.documents, theme = props.theme, pageNumber = props.pageNumber;
     console.log('props', props);
     if (!documents || documents === undefined) {
         throw new Error("Please provide an array of documents to DocViewer.\ne.g. <DocViewer documents={[ { uri: 'https://mypdf.pdf' } ]} />");
@@ -80,6 +80,9 @@ var DocViewer = function (props) {
     return (react_1.default.createElement(state_1.AppProvider, __assign({}, props),
         react_1.default.createElement(styled_components_1.ThemeProvider, { theme: theme ? __assign(__assign({}, theme_1.defaultTheme), theme) : theme_1.defaultTheme },
             react_1.default.createElement(Container, __assign({ id: "react-doc-viewer", "data-testid": "react-doc-viewer" }, props),
+                react_1.default.createElement("p", null,
+                    "PageNumber: ",
+                    pageNumber),
                 react_1.default.createElement(HeaderBar_1.HeaderBar, null),
                 react_1.default.createElement(ProxyRenderer_1.ProxyRenderer, null)))));
 };

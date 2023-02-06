@@ -49,10 +49,6 @@ var AppProvider = function (props) {
         dispatch((0, actions_1.setAllDocuments)(documents));
         config && dispatch((0, actions_1.setMainConfig)(config));
     }, [documents]);
-    return (react_1.default.createElement("div", null,
-        react_1.default.createElement("p", null,
-            "Testing: ",
-            pageNumber),
-        react_1.default.createElement(DocViewerContext.Provider, { value: { state: state, dispatch: dispatch } }, children)));
+    return (react_1.default.createElement(DocViewerContext.Provider, { value: { state: state, dispatch: dispatch } }, children));
 };
 exports.AppProvider = AppProvider;

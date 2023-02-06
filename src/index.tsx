@@ -27,7 +27,7 @@ export interface DocViewerProps {
 }
 
 const DocViewer: FC<DocViewerProps> = (props) => {
-  const { documents, theme } = props;
+  const { documents, theme, pageNumber } = props;
 
   console.log('props', props)
 
@@ -47,6 +47,7 @@ const DocViewer: FC<DocViewerProps> = (props) => {
           data-testid="react-doc-viewer"
           {...props}
         >
+          <p>PageNumber: {pageNumber}</p>
           <HeaderBar />
           <ProxyRenderer />
         </Container>

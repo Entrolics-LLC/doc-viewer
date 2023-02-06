@@ -38,12 +38,9 @@ const AppProvider: FC<DocViewerProps> = (props) => {
   }, [documents]);
 
   return (
-    <div>
-      <p>Testing: {pageNumber}</p>
-      <DocViewerContext.Provider value={{ state, dispatch }}>
+    <DocViewerContext.Provider value={{ state, dispatch }}>
       {children}
     </DocViewerContext.Provider>
-    </div>
   );
 };
 
